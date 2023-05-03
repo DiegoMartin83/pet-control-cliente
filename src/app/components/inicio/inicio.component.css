@@ -1,0 +1,217 @@
+* {
+    font-family: "Nunito Sans", Arial, sans-serif;
+}
+
+.AlignItems {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#content-mobile {
+    display: none !important;
+}
+
+#botonOculto {
+    display: none;
+}
+
+.nav__2-mobile {
+    padding: 0 4px;
+}
+
+.nav__2-bg {
+    background-image: url("/assets/img/pc.jpg");
+    min-height: 100vh;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.6);
+    background-blend-mode: lighten;
+}
+
+.nav__2 .container a {
+    padding: 5px;
+}
+
+#titpet {
+    font-size: 80px;
+}
+
+.nav__2 {
+    /* background-color: rgba(29, 107, 122, 255); */
+    background-color: #4071fa;
+    opacity: 0.5;
+}
+
+.btn__nav2 {
+    border-bottom: 3px solid transparent;
+}
+
+.btn__nav2:hover,
+.btn__nav2:active {
+    border-bottom: 3px solid;
+}
+
+.btn__presupuesto {
+    background-color: #4071fa;
+}
+
+.btn__conociendonos {
+    bottom: 0;
+    position: sticky;
+}
+
+.btn__presupuesto:hover {
+    border-color: #4071fa;
+    background-color: #f8f8ff;
+    color: #1c6c7c !important;
+    transition: 0.3s;
+}
+
+
+/* Sección sobre nosotros */
+
+.section__sobre-nosotros {
+    opacity: 0.8;
+}
+
+
+/* Servicios */
+
+.servicios__cards {
+    color: #1c6c7c;
+    border-style: none;
+    transition: 0.3s;
+}
+
+
+/* Sección contacto */
+
+.section__bg {
+    background-image: url("/assets/img/vetimages.jpg");
+    position: relative;
+    background-position: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.6);
+    background-blend-mode: lighten;
+}
+
+.btn__modal {
+    color: #f8f8ff;
+    background-color: #4071fa;
+    /* border-color: #6b707e; */
+    border-color: #4071fa;
+    transition: 0.3s;
+}
+
+.btn__modal:hover {
+    color: #4071fa !important;
+    background-color: #f8f8ff !important;
+    border-color: #4071fa !important;
+}
+
+.contacto__form {
+    padding-top: 1.5em;
+}
+
+
+/* Footer */
+
+.footer__styles {
+    background-color: #4071fa !important;
+}
+
+.footer__logo {
+    width: 12em !important;
+    height: 2em !important;
+}
+
+
+/* Botón de whatsapp */
+
+.btn-redondo {
+    border-radius: 100%;
+}
+
+.btn-wpp {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 10px;
+}
+
+
+/* Responsive */
+
+@media only screen and (max-width: 576px) {
+    .nav__icono {
+        margin-left: 3px;
+        margin-right: 0 !important;
+    }
+    #content-desktop {
+        display: none;
+    }
+    #content-mobile {
+        display: flex !important;
+    }
+    .nav__2 {
+        padding-top: 3px !important;
+        padding-right: 0 !important;
+    }
+    .nav__2-mobile {
+        padding: 7px 0;
+    }
+    .btn__nav2:hover,
+    .btn__nav2:active {
+        border-bottom: 3px solid transparent;
+        border-color: rgba(29, 107, 122, 255);
+    }
+    .nav__2-bg {
+        object-fit: fill;
+        background-image: url("/img/nosotros_responsive.jpg");
+    }
+    .card-body__presentacion h1 p {
+        margin-top: 0px;
+    }
+    .parrafo__nosotros {
+        text-align: center;
+    }
+    .parrafo__caracteristicas {
+        text-align: center;
+    }
+    .section__servicios {
+        margin-bottom: 0 !important;
+    }
+    .h2__servicios {
+        margin-left: 15vw;
+    }
+    .section__sobre-nosotros h2 {
+        width: 8em;
+    }
+    .consulta__info {
+        max-width: none;
+        padding-left: 0;
+        width: auto;
+    }
+    .consulta__info .container-fluid {
+        padding: 0 !important;
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    .nav__2-bg {
+        background-image: url("/img/nosotros_responsive_tablet.jpg");
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .hero-covid-back {
+        background-image: url("/assets/img/petcontrol1.jpg");
+    }
+}

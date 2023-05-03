@@ -1,0 +1,116 @@
+<form [formGroup]="form" (ngSubmit)="addPetsTasks()">
+    <h2 mat-dialog-title>{{modo}} Mascota</h2>
+    <mat-dialog-content>
+
+
+
+
+
+      <div class="column">
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input formControlName="nombre" matInput placeholder="Nombre">
+
+        </mat-form-field>
+      </div>
+
+
+        <div class="column">
+          <mat-form-field appearance="fill">
+            <mat-label>Especie </mat-label>
+            <input formControlName="especie" matInput placeholder="Especie">
+
+          </mat-form-field>
+        </div>
+
+        <div class="column">
+          <mat-form-field appearance="fill">
+            <mat-label>Raza</mat-label>
+            <input formControlName="raza" matInput placeholder="Raza">
+
+          </mat-form-field>
+        </div>
+
+
+
+        <div class="column">
+          <mat-form-field appearance="fill">
+            <mat-label>Color </mat-label>
+            <input formControlName="color" matInput placeholder="Color">
+
+          </mat-form-field>
+        </div>
+        <div class="column">
+          <mat-form-field appearance="fill">
+            <mat-label>Sexo </mat-label>
+            <input formControlName="sexo" matInput placeholder="Sexo">
+
+          </mat-form-field>
+        </div>
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Fecha de Nacimiento</mat-label>
+      <input [max]= "minDate" formControlName="fechaDeNacimiento" matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker touchUi #picker></mat-datepicker>
+    </mat-form-field>
+
+
+    <div class="column">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre Dueño </mat-label>
+        <input formControlName="nombreDuenio" matInput placeholder="Nombre dueño">
+
+      </mat-form-field>
+    </div>
+
+    <div class="column">
+      <mat-form-field appearance="fill">
+        <mat-label>Apellido Dueño </mat-label>
+        <input formControlName="apellidoDuenio" matInput placeholder="apellidoDuenio">
+
+      </mat-form-field>
+    </div>
+
+    <div class="column">
+      <mat-form-field appearance="fill">
+        <mat-label>DNI </mat-label>
+        <input formControlName="dniDuenio" matInput placeholder="dniDuenio">
+
+      </mat-form-field>
+    </div>
+
+    <div class="column">
+      <mat-form-field appearance="fill">
+        <mat-label>Telefono </mat-label>
+        <input formControlName="telefonoDuenio" matInput placeholder="telefonoDuenio">
+
+      </mat-form-field>
+    </div>
+
+    <div class="column">
+      <mat-form-field appearance="fill">
+        <mat-label>Domicilio </mat-label>
+        <input formControlName="domicilioDuenio" matInput placeholder="domicilioDuenio">
+
+      </mat-form-field>
+    </div>
+
+    <div class="column">
+      <mat-form-field appearance="fill">
+        <mat-label>Correo Electrónico </mat-label>
+        <input formControlName="emailDuenio" matInput placeholder="emailDuenio">
+
+      </mat-form-field>
+    </div>
+
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button class="btn-cancel" (click)="cancelar()" mat-button>Cancelar</button>
+      <button class="btn-add" (click)="addPetsTasks()" type="submit" mat-button >Aceptar</button>
+    </mat-dialog-actions>
+
+  </form>
+
+

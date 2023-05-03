@@ -1,0 +1,38 @@
+<div class="container">
+    <p-toast></p-toast>
+    <div class='row h-50 justify-content-center align-items-center'>
+        <div class='mx-auto col-sm-6'>
+            <div class="card text-center">
+                <div class="card-header">
+                    <img id="logo" src="../assets/img/logoTransparente.png" width="300" height="150">
+
+                </div>
+                <form role="form" novalidate (ngSubmit)="forgotPwd()" [formGroup]="loginForm">
+                    <div class="inputs">
+                        <div class="form-group">
+                            <input type="email" name="usuario" formControlName="usuario" placeholder="&#xf2b6;   Correo electrónico" class="form-control">
+
+                            <div *ngIf="loginForm.get('usuario')!.invalid && (loginForm.get('usuario')!.dirty || loginForm.get('usuario')!.touched)">
+                                <p class="form-text text-danger" *ngIf="loginForm.get('email')?.errors?.required">
+                                    El correo es obligatorio
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('usuario')?.errors?.email">
+                                    El correo ingresado no es válido
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <button pButton type="submit" [disabled]="loginForm.invalid || isLogin" class="btn btn-primary">
+          <i class="fas fa-lock"></i>&nbsp;&nbsp;&nbsp;<span>Recuperar clave</span>
+        </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

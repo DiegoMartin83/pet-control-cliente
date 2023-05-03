@@ -1,0 +1,110 @@
+
+<form [formGroup]="form" (ngSubmit)="addTurnosTasks()">
+  <h2 mat-dialog-title>{{modo}} Turno</h2>
+  <mat-dialog-content>
+
+   <!-- <div class="row">
+    <div class="column">
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label >Fecha <mat-datepicker-toggle id="dpi" matIconSuffix [for]="picker">
+        <input [min]= "minDate" formControlName="fechaVisita" matInput [matDatepicker]="picker">
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-datepicker-toggle></mat-label>
+      </mat-form-field>
+    </div>
+  </div> -->
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Fecha</mat-label>
+    <input [min]= "minDate" formControlName="fechaVisita" matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker touchUi #picker></mat-datepicker>
+  </mat-form-field>
+
+
+
+    <!-- <div><h1 style="text-align:center">TIME PICKER</h1>
+      <input placeholder="Time"[ngxTimepicker]="picker">
+      <ngx-material-timepicker #picker></ngx-material-timepicker></div>
+
+    <div class="24hr-example">
+      <input placeholder="24hr format" aria-label="24hr format" [ngxTimepicker]="fullTime" [format]="24"  readonly>
+      <ngx-material-timepicker #fullTime></ngx-material-timepicker>
+  </div> -->
+
+    <div class="column">
+      <mat-form-field appearance="fill">
+        <mat-label>Hora</mat-label>
+        <input formControlName="horaVisita" matInput placeholder="Hora">
+
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <mat-form-field appearance="fill">
+          <mat-label>Identificador mascota </mat-label>
+          <input formControlName="id_mascota" matInput placeholder="ID Mascota">
+
+        </mat-form-field>
+      </div>
+      <div class="column">
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre mascota</mat-label>
+          <input formControlName="nombre_mascota" matInput placeholder="Nombre mascota">
+
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <mat-form-field appearance="fill">
+          <mat-label>Legajo Profesional </mat-label>
+          <input formControlName="idProfesional" matInput placeholder="Legajo">
+
+        </mat-form-field>
+      </div>
+      <div class="column">
+        <mat-form-field appearance="fill">
+          <mat-label>Estado </mat-label>
+          <input formControlName="estado" matInput placeholder="estado">
+
+        </mat-form-field>
+      </div>
+    </div>
+
+
+
+
+
+
+    <!-- <div class="row">
+      <div class="column">
+        <mat-form-field appearance="fill">
+          <mat-label><h4>Basic mat-select</h4>
+            <mat-form-field appearance="fill">
+              <mat-label>Favorite food</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                  {{food.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field></mat-label>
+          <input matInput placeholder="Legajo">
+
+        </mat-form-field>
+      </div> -->
+
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button class="btn-cancel" (click)="cancelar()" mat-button>Cancelar</button>
+    <button class="btn-add" type="submit" mat-button >Agendar</button>
+  </mat-dialog-actions>
+
+</form>
+
+
+
+

@@ -1,0 +1,19 @@
+
+mat-form-field{
+    width:100%;
+  }
+
+  .row{
+
+    display:flex;
+  }
+
+  .column{
+    flex: 50%;
+
+  }
+
+  .input{
+    width:90%;
+    margin-right:10px;
+  }

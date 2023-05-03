@@ -1,0 +1,63 @@
+/* #input-datos {
+    background-color: rgb(233, 232, 225);
+    font-weight: bold;
+    font-family: "Font Awesome 5 Free", "Source Sans Pro";
+}
+
+label {
+    font-weight: bold;
+    color: white;
+}
+
+.container {
+    background-color: rgb(86, 115, 116);
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px;
+    /* margin: 8px 0px; */
+
+
+/* border: 1px solid rgb(0, 26, 255);
+    border-radius: 2px;
+    background-color: rgb(43, 90, 151);
+    color: white; */
+
+
+/* resize: vertical; */
+
+
+/* font-weight: bold;
+    margin-bottom: 40px;
+    position: absolute;
+} */
+
+#input-datos {
+    background-color: rgb(9, 48, 107);
+    font-weight: bold;
+    font-family: "Arial";
+    /* color: white; */
+    margin-bottom: 2px;
+     height: 30px;
+}
+
+label {
+    font-weight: bold;
+    color: rgb(12, 12, 12);
+}
+
+.container {
+    background-color: rgb(8, 3, 39);
+    box-sizing: border-box;
+    width: 40%;
+    height: 70px;
+    padding: 5px;
+     /* margin: 8px 10px; */
+    border: 1px solid rgb(242, 242, 248);
+   border-radius: 1px;
+    background-color: rgb(7, 38, 78);
+    color: white;
+    resize: vertical;
+    font-weight: bold;
+    margin-bottom: 80px;
+
+}

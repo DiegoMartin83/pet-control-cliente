@@ -1,0 +1,13 @@
+/* #const {
+    background-color: antiquewhite;
+} */
+
+body,
+center {
+    background-repeat: no-repeat;
+    background-size: center;
+    height: 100%;
+    width: 90px;
+    box-sizing: border-box;
+    position: fixed;
+}

@@ -1,0 +1,107 @@
+
+<mat-toolbar color="Black" >
+    <span>Listado de turnos</span>
+  </mat-toolbar>
+
+  <mat-progress-bar  *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+
+
+  <mat-card>
+
+    <mat-form-field>
+      <mat-label>Filtro</mat-label>
+      <input matInput  matInput (keyup)="applyFilter($event)" placeholder="Buscar..." #input autocomplete="off">
+    </mat-form-field>
+
+
+    <table  matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> No. Usuario </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dni">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Documento </th>
+        <td mat-cell *matCellDef="let element"> {{element.dni}} </td>
+      </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre</th>
+      <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+    </ng-container>
+
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="apellido">
+      <th mat-header-cell *matHeaderCellDef> Apellido </th>
+      <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
+    </ng-container>
+
+     <!-- Symbol Column -->
+    <ng-container matColumnDef="telefono">
+      <th mat-header-cell *matHeaderCellDef> Telefono fijo </th>
+      <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="celular">
+      <th mat-header-cell *matHeaderCellDef> Telefono celular </th>
+      <td mat-cell *matCellDef="let element"> {{element.celular}} </td>
+    </ng-container>
+
+       <!-- Symbol Column -->
+       <ng-container matColumnDef="domicilio">
+        <th mat-header-cell *matHeaderCellDef> Domicilio </th>
+        <td mat-cell *matCellDef="let element"> {{element.domicilio}} </td>
+      </ng-container>
+
+
+
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef> Correo electronico </th>
+    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+        <!-- Symbol Column -->
+    <ng-container matColumnDef="rol">
+    <th mat-header-cell *matHeaderCellDef> Rol </th>
+    <td mat-cell *matCellDef="let element"> {{element.rol}} </td>
+    </ng-container>
+
+
+         <!-- Symbol Column -->
+         <ng-container matColumnDef="perfil">
+            <th mat-header-cell *matHeaderCellDef> Perfil profesional </th>
+            <td mat-cell *matCellDef="let element"> {{element.perfil}} </td>
+            </ng-container>
+
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+          {{element.acciones}}
+
+          <!-- <mat-icon class="btn-edit"> edit </mat-icon>
+          <mat-icon class="btn-delete"> delete </mat-icon> -->
+          <mat-icon class="btn-delete" (click)="deleteUser(element.id)" matTooltip="Editar {{element.nombre}} ">delete </mat-icon>
+
+        </td>
+        </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of turns"></mat-paginator>
+  </mat-card>

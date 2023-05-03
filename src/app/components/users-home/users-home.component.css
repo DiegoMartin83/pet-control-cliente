@@ -1,0 +1,99 @@
+/* body {
+    font-family: verdana;
+    background-image: url('/assets/img/dogs.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100;
+} */
+
+#sidenav {
+    background-image: url('/assets/img/clinicavete.jpg')
+}
+
+
+/* .sidenav {
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+    border-right: 1px solid white;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+} */
+
+
+/* .main {
+    margin-left: 180px;
+    /* Same as the width of the sidenav /
+  font-size: 28px; / Increased text to enable scrolling */
+
+
+/* padding: 0px 10px; */
+
+h1 {
+    text-align: center;
+    font-family: times new roman;
+    font-style: normal;
+    font-weight: 800;
+    color: blanchedalmond;
+}
+
+
+/* #menuAdmin{
+  max-width: 250px;
+  background-color: aliceblue;
+  border-right: 4px solid;
+  border-radius: 5px;
+  border-color:chocolate;
+} */
+
+.sidenav {
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+    border-right: 1px solid white;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    /* height: 10px; */
+    /* background-color: rgba(0, 0, 0, 0.712); */
+    /* background-color: rgba(10, 9, 9, 0.884); */
+    background: rgba(3, 28, 51, 0.884);
+    margin-bottom: 0%;
+}

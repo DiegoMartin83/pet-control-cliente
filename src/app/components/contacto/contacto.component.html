@@ -1,0 +1,36 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <!-- <div class="imgLogo">
+                        <img id="logo" src="../assets/img/logoTransparente.png" width="300" height="150">
+                    </div> -->
+                    <h1>Formulario de consulta</h1>
+
+                </div>
+
+                <form (submit)="contactUs()">
+                    <div class="form-group">
+                        <input type="text" name="usuario" [(ngModel)]="contact.nombreyapellido" placeholder="Nombre y apellido" class="form-control" autofocus>
+                        <input type="email" name="correo" [(ngModel)]="contact.email" placeholder="Correo electrónico" class="form-control">
+                        <input type="number" name="telefono" [(ngModel)]="contact.telefono" placeholder="Telefono" class="form-control">
+                        <textarea name="usuario" [(ngModel)]="contact.consulta" placeholder="Escriba su consulta..." class="form-control"></textarea>
+
+
+                        <button type="submit" class="btn btn-block btn-primary" id="idLi">
+                          <i class="fas fa-paper-plane"></i>&nbsp;&nbsp;&nbsp;<span>Enviar</span>
+                        </button>
+                        <!-- <button type="submit" class="btn  btn-primary">Enviar consulta</button> -->
+                        <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+                    </div>
+
+                    <!-- <h4><a routerLink=""¿No estas registrado? Crea una cuenta!</a></h4>
+                    <h3><a href="formInscription.html">¿No tienes cuenta? Regístrate! </h3> -->
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>

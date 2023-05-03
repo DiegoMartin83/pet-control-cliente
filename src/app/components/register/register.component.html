@@ -1,0 +1,313 @@
+<!-- <div class="container p-4">
+    <p-toast></p-toast>
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <div class="imgLogo">
+                        <img id="logo" src="../assets/img/logoTransparente.png" width="300" height="150">
+                    </div>
+
+                </div>
+                <div *ngIf="!retry && !successful" class="card-body">
+                    <form (submit)="createAccount()">
+                        <div class="form-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" name="nombre" [(ngModel)]="user.nombre" placeholder="&#xf2b6; Nombre" class="form-control" (focus)="cleanName()" required>
+
+                            <div [ngSwitch]="errorNombres">
+                                <div *ngSwitchCase="1">Debes completar el campo</div>
+                                <div *ngSwitchCase="2">Nombre muy largo</div>
+                                <div *ngSwitchCase="3">Nombre debe ser alfabetico</div>
+                            </div>
+                            <input type="text" name="apellido" [(ngModel)]="user.apellido" placeholder="Apellido" class="form-control" required>
+                            <div ngSwitch="errorDni">
+
+                            </div>
+                            <input type="number" name="documento" [(ngModel)]="user.dni" placeholder="Documento" class="form-control" required>
+                            <input type="email" name="email" [(ngModel)]="user.email" placeholder="Correo electrónico" class="form-control" (focus)="cleanEmail()" required>
+                             <div [ngSwitch]="errorEmail">
+                                <div *ngSwitchCase="1">Debes completar el campo</div>
+                                <div *ngSwitchCase="2">Email muy largo</div>
+                                <div *ngSwitchCase="3">Email debe ser nombre@dominio.algo .</div>
+                            </div> -->
+<!-- <input type="password" name="password" [(ngModel)]="user.password" placeholder="Contraseña" class="form-control" (focus)="cleanPassword()" required> -->
+<!-- <div [ngSwitch]="errrorPassword">
+                                <div *ngSwitchCase="1">Debes completar el campo</div>
+                                <div *ngSwitchCase="2">Contraseña muy larga</div>
+                                <div *ngSwitchCase="3">Contraseña debe ser alfanumerica y admite mayusculas.</div>
+                            </div> -->
+<!-- <input type="password" name="repassword" [(ngModel)]="user.repassword" placeholder="Repetir Contraseña" class="form-control" (focus)="cleanRePassword()" required>
+                            <div [ngSwitch]="errorRePassrword">
+                                <div *ngSwitchCase="1">Las contraseñas deben ser iguales</div>
+                            </div>
+
+                            <input type="text" name="rol" [(ngModel)]="user.rol" placeholder="Rol" class="form-control" required>
+
+                            <input type="number" name="number" [(ngModel)]="user.telefono" placeholder="Telefono" class="form-control" required>
+                            <input type="number" name="celular" [(ngModel)]="user.celular" placeholder="Teléfono Celular" class="form-control" required>
+                            <input type="text" name="direccion" [(ngModel)]="user.domicilio" placeholder="Dirección" class="form-control" required>
+
+                            <input type="text" name="perfil" [(ngModel)]="user.perfil" placeholder="Perfil" class="form-control" required>
+                            <i class="fas fa-code"></i> -->
+
+<!--
+                                <input matInput [matDatepicker]="picker" class="form-control" [(ngModel)]="user.fecha_nacimiento" name="fecha_nacimiento" placeholder="Nacimiento" style="display:inline; width:300px" id="dp">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <input type="date" name="nacimiento" [(ngModel)]="user.fecha_nacimiento" placeholder="Nacimiento" class="form-control" required >
+                                 <mat-datepicker #picker></mat-datepicker>   -->
+
+<!-- <input type="date" name="nacimiento" [(ngModel)]="user.fecha_nacimiento" placeholder="Nacimiento" class="form-control" required> -->
+
+
+<!-- <input matInput [matDatepicker]="picker" type="date" class="form-control" [(ngModel)]="user.fecha_nacimiento" name="fecha_nacimiento" placeholder="Nacimiento" style="display:inline; width:300px" id="dp">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> <mat-datepicker #picker></mat-datepicker> -->
+
+
+
+
+
+
+<!--
+                            <button class="btn btn-primary btn-block" (click)="verificarForm()">Enviar</button>
+
+
+
+
+                        </div>
+                    </form>
+                </div> -->
+
+<div class="container">
+    <p-toast></p-toast>
+    <div class='row h-50 justify-content-center align-items-center'>
+        <div class='mx-auto col-sm-6'>
+            <div class="card text-center">
+                <div class="card-header">
+                    <img id="logo" src="../assets/img/logoTransparente.png" width="300" height="150">
+                </div>
+                <form role="form" novalidate (ngSubmit)="register()" [formGroup]="loginForm">
+                    <div class="inputs">
+
+                        <div class="form-group">
+                            <input type="text" name="nombre" formControlName="nombre" placeholder="&#xf2bd;   Nombre" class="form-control">
+
+                            <div *ngIf="loginForm.get('nombre')!.invalid && (loginForm.get('nombre')!.dirty || loginForm.get('nombre')!.touched)">
+                                <p class="form-text text-danger" *ngIf="loginForm.get('nombre')?.errors?.required">
+                                    El campo nombre es obligatorio
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('nombre')?.errors?.minlength">
+                                    Nombre invalido, debe contener minimo 3 letras
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('nombre')?.errors?.maxlength">
+                                    Excedió el limite maximo de caracteres
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('nombre')?.errors?.pattern">
+                                    El nombre no tiene formato valido
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="apellido" formControlName="apellido" placeholder="&#xf2bd;   Apellido" class="form-control">
+
+                            <div *ngIf="loginForm.get('apellido')!.invalid && (loginForm.get('apellido')!.dirty || loginForm.get('apellido')!.touched)">
+                                <p class="form-text text-danger" *ngIf="loginForm.get('apellido')?.errors?.required">
+                                    El campo apellido es obligatorio
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('apellido')?.errors?.minlength">
+                                    Apellido invalido, debe contener minimo 3 letras
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('apellido')?.errors?.maxlength">
+                                    Excedió el limite maximo de caracteres
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('apellido')?.errors?.pattern">
+                                    El apellido no tiene formato valido
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="dni" formControlName="dni" placeholder="&#xf2bb;   DNI" class="form-control">
+
+                            <div *ngIf="loginForm.get('dni')!.invalid && (loginForm.get('dni')!.dirty || loginForm.get('dni')!.touched)">
+                                <p class="form-text text-danger" *ngIf="loginForm.get('dni')?.errors?.required">
+                                    El campo DNI es obligatorio
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('dni')?.errors?.minlength">
+                                    DNI invalido, debe contener minimo 7 numeros
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('dni')?.errors?.maxlength">
+                                    Excedió el limite maximo de numeros
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="telefono" formControlName="telefono" placeholder="&#xf095;   Telefono" class="form-control">
+
+                            <div *ngIf="loginForm.get('telefono')!.invalid && (loginForm.get('telefono')!.dirty || loginForm.get('telefono')!.touched)">
+                                <p class="form-text text-danger" *ngIf="loginForm.get('telefono')?.errors?.required">
+                                    El campo telefono es obligatorio
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('telefono')?.errors?.minlength">
+                                    Telefono invalido, debe contener minimo 8 numeros
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('telefono')?.errors?.maxlength">
+                                    Excedió el limite maximo de numeros
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('telefono')?.errors?.pattern">
+                                    El telefono no tiene formato valido
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="celular" formControlName="celular" placeholder="   Móvil" class="form-control">
+
+                            <div *ngIf="loginForm.get('celular')!.invalid && (loginForm.get('celular')!.dirty || loginForm.get('celular')!.touched)">
+                                <p class="form-text text-danger" *ngIf="loginForm.get('telefono')?.errors?.required">
+                                    El campo telefono es obligatorio
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('celular')?.errors?.minlength">
+                                    Telefono invalido, debe contener minimo 8 numeros
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('celular')?.errors?.maxlength">
+                                    Excedió el limite maximo de numeros
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('celular')?.errors?.pattern">
+                                    El telefono no tiene formato valido
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="domicilio" formControlName="domicilio" placeholder="   Domicilio" class="form-control">
+
+                            <div *ngIf="loginForm.get('domicilio')!.invalid && (loginForm.get('domicilio')!.dirty || loginForm.get('domicilio')!.touched)">
+                                <p class="form-text text-danger" *ngIf="loginForm.get('domicilio')?.errors?.required">
+                                    El campo es obligatorio
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('domicilio')?.errors?.minlength">
+                                    Campo inválido, debe contener al menos 3 caracteres
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('domicilio')?.errors?.maxlength">
+                                    Limite maximo de caracteres máximo excedido!
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('domicilio')?.errors?.pattern">
+                                    El campo no tiene formato valido
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input type="email" name="email" formControlName="email" placeholder="&#xf2b6;   Correo electrónico" class="form-control">
+
+                            <div *ngIf="loginForm.get('email')!.invalid && (loginForm.get('email')!.dirty || loginForm.get('email')!.touched)">
+                                <p class="form-text text-danger" *ngIf="loginForm.get('email')?.errors?.required">
+                                    El campo es obligatorio
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('email')?.errors?.email">
+                                    El campo es invalido
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="rol" formControlName="rol" placeholder="   Rol" class="form-control">
+
+                            <div *ngIf="loginForm.get('rol')!.invalid && (loginForm.get('rol')!.dirty || loginForm.get('rol')!.touched)">
+                                <p class="form-text text-danger" *ngIf="loginForm.get('rol')?.errors?.required">
+                                    El campo nombre es obligatorio
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('rol')?.errors?.minlength">
+                                    Nombre invalido, debe contener minimo 3 letras
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('rol')?.errors?.maxlength">
+                                    Excedió el limite maximo de caracteres
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('rol')?.errors?.pattern">
+                                    El nombre no tiene formato valido
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="perfil" formControlName="perfil" placeholder="   Perfil" class="form-control">
+
+                            <div *ngIf="loginForm.get('perfil')!.invalid && (loginForm.get('perfil')!.dirty || loginForm.get('perfil')!.touched)">
+                                <p class="form-text text-danger" *ngIf="loginForm.get('perfil')?.errors?.required">
+                                    El campo nombre es obligatorio
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('perfil')?.errors?.minlength">
+                                    Nombre invalido, debe contener minimo 3 letras
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('perfil')?.errors?.maxlength">
+                                    Excedió el limite maximo de caracteres
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('perfil')?.errors?.pattern">
+                                    El nombre no tiene formato valido
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" name="password" formControlName="password" placeholder="&#xf084;   Clave" class="form-control">
+
+                            <div *ngIf="loginForm.get('password')!.invalid && (loginForm.get('password')!.dirty || loginForm.get('password')!.touched)">
+                                <p class="form-text text-danger" *ngIf="loginForm.get('password')?.errors?.required">
+                                    El campo contraseña es obligatorio
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('password')?.errors?.pattern">
+                                    La contraseña no tiene formato valido
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('password')?.errors?.maxlength">
+                                    La contraseña no puede tener mas de 20 caracteres
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('password')?.errors?.minlength">
+                                    La contraseña no puede tener menos de 8 caracteres
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" name="repassword" formControlName="repassword" placeholder="&#xf084;   Reingresar clave" class="form-control">
+
+                            <div *ngIf="loginForm.get('repassword')!.invalid && (loginForm.get('repassword')!.dirty || loginForm.get('repassword')!.touched)">
+                                <p class="form-text text-danger" *ngIf="loginForm.get('repassword')?.errors?.required">
+                                    El campo contraseña es obligatorio
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('repassword')?.errors?.pattern">
+                                    La contraseña no tiene formato valido
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('repassword')?.errors?.maxlength">
+                                    La contraseña no puede tener mas de 20 caracteres
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('repassword')?.errors?.minlength">
+                                    La contraseña no puede tener menos de 8 caracteres
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <form id="captcha" margin-bottom="10px" width="304px">
+                            <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" [Size]="Size" (success)="confirm($event)">
+                            </ngx-recaptcha2>
+                        </form>
+
+
+                    </div>
+                    <button pButton type="submit" [disabled]="loginForm.invalid && isCheck " class="btn btn-primary btn-block">
+                      <i class="fa fa-user-plus fa-lg"></i>&nbsp;&nbsp;&nbsp;<span>Crear cuenta</span>
+                    </button>
+                </form>
+                <p>¿Ya tiene una cuenta?
+                    <a routerLink="../../auth/login">Iniciar sesión</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    {{isCheck}}
+</div>

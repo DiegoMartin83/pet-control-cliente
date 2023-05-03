@@ -1,0 +1,146 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-blue">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+    <a class="navbar-brand" id="letPet" href="#">Pet Control</a>
+
+    <nav *ngIf="!logIn" class="navbar navbar-expand-lg navbar-dark bg-blue">
+
+
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+            <!-- <li class="nav-item">
+                <a class="nav-link active" id="letPet" routerLink="contacto">Contacto</a>
+            </li> -->
+            <!-- <li class="nav-item">
+              <a class="nav-link active " routerLink="auth/login">Ingresar</a>
+          </li> -->
+        </ul>
+
+
+    </nav>
+
+
+
+
+    <nav *ngIf="logIn" class="navbar navbar-expand-lg navbar-dark bg-blue">
+
+        <nav *ngIf="id_Rol == 'User'" class="navbar navbar-expand-lg navbar-dark bg-blue">
+            <!-- <ul class="navbar-nav mr-auto mt-2 mt-lg-0"> -->
+                <!-- <li class="nav-item"> -->
+                    <a class="nav-link active" routerLink="../../listado">Turnos</a>
+                <!-- </li> -->
+                <!-- <li class="nav-item">
+                  <a class="nav-link active" routerLink="../../nuevo-turno">Asignar turnos</a>
+              </li> -->
+                <!-- <li class="nav-item"> -->
+                    <a class="nav-link active" routerLink="../../fichas-listado">Historias Clínicas</a>
+                <!-- </li> -->
+                <!-- <li class="nav-item"> -->
+                  <a class="nav-link active" routerLink="../../mascotas-listado">Mascotas</a>
+              <!-- </li> -->
+                <!-- <li class="nav-item">
+                    <a class="nav-link active" routerLink="about">Nosotros</a>
+                </li> -->
+
+                <!-- <li class="nav-item">
+      <a class="nav-link active " routerLink="auth/login">Ingresar</a>
+  </li> -->
+            <!-- </ul> -->
+
+        </nav>
+
+    </nav>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <!-- <li class="nav-item">
+              <a class="nav-link active" routerLink="about">Nosotros</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active " routerLink="auth/login">Ingresar</a>
+          </li> -->
+        </ul>
+
+        <nav *ngIf="logIn" class="navbar navbar-expand-lg navbar-dark bg-blue">
+          <nav *ngIf="id_Rol === 'Admin'" class="navbar navbar-expand-lg navbar-dark bg-blue">
+
+                <!-- <a class="nav-link" routerLink="users/home">Home</a> -->
+
+
+                <a class="nav-link" routerLink="../../mascotas-listado"> Mascotas</a>
+                <!-- <li class="nav-item">
+                    <a class="nav-link active" routerLink="../../mascotas-listado">Mascotas</a>
+                </li> -->
+                <a class="nav-link" routerLink="../../listado">Ver turnos</a>
+                <a class="nav-link" routerLink="../../usuarios-listado">Usuarios</a>
+
+
+
+
+
+
+
+               <!-- <a class="nav-link" routerLink="../../nueva-mascota">Alta </a> -->
+
+
+        </nav>
+
+        </nav>
+
+
+        <form class="  navbar navbar-expand-lg navbar-dark bg-blue">
+
+            <div *ngIf="!logIn">
+                <button type="button" class="btn btn-outline-success me-3" style="font-weight: bold;" routerLink="auth/login">
+                    <i class="fa fa-sign-in"></i>
+                    <span class="btn-text">&nbsp;Ingresar</span>
+                  </button>
+            </div>
+            <br>
+            <div *ngIf="!logIn">
+                <button type="button" class="btn btn-outline-primary me-3" style="font-weight: bold;" routerLink="auth/createAccount">
+            <i class="fa fa-user-plus"></i>
+            <span class="btn-text">&nbsp;Crear cuenta</span>
+          </button>
+            </div>
+
+
+
+            <!-- <div *ngIf="logIn">
+
+                <button type="button" class="btn btn-outline-light me-xl-5" style="font-weight: bold;" id="logout" (click)="logout()">
+                <i class="fa fa-sign-out"></i>
+                Cerrar sesión
+                </button>
+
+            </div> -->
+            <div *ngIf="logIn" >
+                <!--
+                <button type="button" class="btn btn-outline-light me-xl-5" style="font-weight: bold;" id="logout"> -->
+                <a class="nav-link  " routerLink="user/profile"> </a>
+
+                <!-- </button> -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link active navbar-brand" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <!-- <i class="fa fa-users-cog"></i> -->
+                        <i class="fa-solid fa-user-gear"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" routerLink="user/profile">Mi perfil</a>
+                        <div>
+                            <a class="dropdown-item" id="logout" (click)="logout()">Cerrar sesión</a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </form>
+    </div>
+</nav>

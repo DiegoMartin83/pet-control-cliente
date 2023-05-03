@@ -1,0 +1,64 @@
+<form [formGroup]="form" (ngSubmit)="addFilesTasks()">
+    <h2 mat-dialog-title>{{modo}} </h2>
+    <mat-dialog-content>
+
+
+
+
+
+      <div class="column">
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input formControlName="nombre" matInput placeholder="Nombre">
+
+        </mat-form-field>
+      </div>
+
+
+        <div class="column">
+          <mat-form-field appearance="fill">
+            <mat-label>Especie </mat-label>
+            <input formControlName="especie" matInput placeholder="especie">
+
+          </mat-form-field>
+        </div>
+
+        <div class="column">
+            <mat-form-field appearance="fill">
+              <mat-label>Raza </mat-label>
+              <input formControlName="raza" matInput placeholder="Raza">
+
+            </mat-form-field>
+          </div>
+        <div class="column">
+          <mat-form-field appearance="fill">
+            <mat-label>Descripcion</mat-label>
+            <input formControlName="descripcion" matInput placeholder="Descripcion">
+
+          </mat-form-field>
+        </div>
+
+
+
+
+
+        <div class="column">
+          <mat-form-field appearance="fill">
+            <mat-label>Resumen </mat-label>
+            <input formControlName="resumen" matInput placeholder="Resumen">
+
+          </mat-form-field>
+        </div>
+
+
+
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button class="btn-cancel" (click)="cancelar()" mat-button>Cancelar</button>
+      <button class="btn-add" type="submit" mat-button >Agendar</button>
+    </mat-dialog-actions>
+
+  </form>
+
+
+

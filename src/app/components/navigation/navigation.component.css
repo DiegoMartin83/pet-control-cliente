@@ -1,0 +1,45 @@
+/* .navbar {
+    background-color: rgb(0, 195, 255);
+}
+
+#navColor {
+    color: black
+} */
+
+#logout {
+    cursor: pointer;
+}
+
+#letPet {
+    color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(3, 28, 51, 0.884);
+    /* font-family: times, "Times New Roman"; */
+}
+
+.text-end {
+    text-align: right!important;
+    margin: auto;
+    margin-right: unset;
+}
+
+.btn {
+    width: 10em;
+}
+
+@media only screen and (max-width: 640px) {
+    .btn-text {
+        display: none;
+    }
+    .btn {
+        width: auto;
+    }
+}
+
+input {
+    font-family: "Arial", "Font Awesome 5 free";
+    font-weight: 600;
+    font-size: 14px;
+}

@@ -1,0 +1,113 @@
+<!-- <div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <div class="imgLogo">
+                        <img id="logo" src="../assets/img/logoTransparente.png" width="300" height="150">
+                    </div>
+
+                </div>
+                <div *ngIf="!retry" class="card-body">
+                    <form (submit)="login()">
+                        <div class="form-group">
+
+                            <input type="email" name="usuario" [(ngModel)]="user.usuario" placeholder="   Usuario" class="form-control" autofocus>
+
+                            <input type="password" name="password" [(ngModel)]="user.password" placeholder="&#xf084;   Clave" class="form-control">
+                            <button type="submit" class="btn btn-block btn-primary" id="idLi">
+                              <i class="fa fa-sign-in fa-lg"></i>&nbsp;&nbsp;&nbsp;<span>Iniciar sesion</span>
+                            </button>
+
+                            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                        </div>
+                        <h4><a routerLink="../../auth/createAccount">¿No estas registrado? Crea una cuenta!</a></h4>
+                        <a class="nav-link" routerLink="../../auth/forgot"> Olvidé mi clave <span class="sr-only"></span></a>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- <app-navigation></app-navigation> -->
+<div class="container">
+    <p-toast></p-toast>
+    <div class='row h-50 justify-content-center align-items-center'>
+        <div class='mx-auto col-sm-6'>
+            <div class="card text-center">
+                <div class="card-header">
+                    <img id="logo" src="../assets/img/logoTransparente.png" width="300" height="150">
+
+                </div>
+                <form role="form" novalidate (ngSubmit)="login()" [formGroup]="loginForm">
+                    <div class="inputs">
+                        <div class="form-group">
+                            <input type="email" name="usuario" formControlName="usuario" placeholder="&#xf2b6;   Correo electrónico" class="form-control">
+
+                            <div *ngIf="loginForm.get('usuario')!.invalid && (loginForm.get('usuario')!.dirty || loginForm.get('usuario')!.touched)">
+                                <p class="form-text text-danger" *ngIf="loginForm.get('email')?.errors?.required">
+                                    El correo es obligatorio
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('usuario')?.errors?.email">
+                                    El correo ingresado no es válido
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" name="password" formControlName="password" placeholder="&#xf084;   Clave" class="form-control">
+
+                            <div *ngIf="loginForm.get('password')!.invalid && (loginForm.get('password')!.dirty || loginForm.get('password')!.touched)">
+                                <p class="form-text text-danger" *ngIf="loginForm.get('password')?.errors?.required">
+                                    El campo clave es obligatorio
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('password')?.errors?.pattern">
+                                    La password no tiene formato valido
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('password')?.errors?.maxlength">
+                                    La password no puede tener mas de 50 caracteres
+                                </p>
+                                <p class="form-text text-danger" *ngIf="loginForm.get('password')?.errors?.minlength">
+                                    La password no puede tener menos de 8 caracteres
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <form id="captcha" margin-bottom="10px" width="304px">
+                            <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" [Size]="Size" (success)="confirm($event)">
+                                <!-- <div *ngIf="loginForm.get('recaptcha')!.invalid && (loginForm.get('recaptcha')!.dirty || loginForm.get('recaptcha')!.touched)">
+                                    <p class="form-text text-danger" *ngIf="loginForm.get('recaptcha')?.errors?.required">
+                                        El captcha es obligatorio!
+                                    </p>
+                                </div> -->
+                            </ngx-recaptcha2>
+
+
+                        </form>
+
+
+                    </div>
+
+
+
+
+                    <button pButton type="submit" [disabled]="loginForm.invalid && isCheck " class="btn btn-primary">
+            <i class="fa fa-sign-in-alt fa-lg"></i>&nbsp;&nbsp;&nbsp;<span>Iniciar sesion</span>
+          </button>
+                </form>
+                <p>¿Todavía no tenés una cuenta?
+                    <a routerLink="../../auth/createAccount">Crear cuenta!</a>
+                </p>
+                <p>¿Olvidaste tu contraseña?
+                    <a routerLink="../../auth/forgot">Recuperar clave</a>
+                </p>
+            </div>
+        </div>
+    </div>
+<!-- {{isCheck}} -->
+</div>

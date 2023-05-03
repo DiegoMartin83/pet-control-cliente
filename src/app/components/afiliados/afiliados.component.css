@@ -1,0 +1,85 @@
+.form-group {
+    font-family: monospace;
+    width: 10x;
+}
+
+.container {
+    height: 120vh;
+    font-family: "Arial";
+}
+
+.card {
+    border-radius: 1.80rem;
+    border: none;
+    background-color: white;
+    font-family: "Arial";
+}
+
+.card-header {
+    border-radius: 1.25rem;
+    background-color: rgb(139, 231, 188);
+    font-family: "Arial";
+}
+
+.form-group {
+    margin: 1em;
+}
+
+.form-control {
+    border: none;
+    /* font-family: "Font Awesome 5 Free";
+font-weight: 300; */
+}
+
+
+/*
+.btn {
+width: 80%;
+display: block;
+padding: 0.75em; */
+
+
+/* margin: 2em; */
+
+
+/* margin-left: auto;
+margin-right: auto;
+border-radius: 3em; */
+
+
+/* }  */
+
+.btn {
+    width: 80%;
+    display: block;
+    padding: 0.75em;
+    margin: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3em;
+}
+
+input {
+    /* background-color: white;
+font-family: 'Source Sans Pro', "Font Awesome 5 Free";
+font-weight: 900;
+font-size: 16px;
+border: 3px solid transparent; */
+    font-family: "Arial", "Font Awesome 5 free";
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-text {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+#divSession {
+    background-color: rgb(202, 199, 199);
+}
+
+#divInput {
+    color: black;
+}

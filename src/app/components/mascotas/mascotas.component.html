@@ -1,0 +1,232 @@
+<div class="container">
+  <p-toast></p-toast>
+  <div class='row h-50 justify-content-center align-items-center'>
+      <div class='mx-auto col-sm-6'>
+          <div class="card text-center">
+              <div class="card-header">
+                  <i class="fas fa-users"></i>
+                  <h3>AÑADIR AFILIADO</h3>
+              </div>
+              <form role="form" novalidate (ngSubmit)="altaMascota()" [formGroup]="mascotasForm">
+                  <div class="inputs">
+
+                    <div class="form-group">
+                      <input type="text" name="nombre" formControlName="nombre" placeholder="&#xf2bd;   Nombre" class="form-control">
+
+                      <div *ngIf="mascotasForm.get('nombre')!.invalid && (mascotasForm.get('nombre')!.dirty || mascotasForm.get('nombre')!.touched)">
+                          <p class="form-text text-danger" *ngIf="mascotasForm.get('nombre')?.errors?.required">
+                              El campo nombre es obligatorio
+                          </p>
+                          <p class="form-text text-danger" *ngIf="mascotasForm.get('nombre')?.errors?.minlength">
+                              Nombre invalido, debe contener minimo 3 letras
+                          </p>
+                          <p class="form-text text-danger" *ngIf="mascotasForm.get('nombre')?.errors?.maxlength">
+                              Excedió el limite maximo de caracteres
+                          </p>
+                          <p class="form-text text-danger" *ngIf="mascotasForm.get('nombre')?.errors?.pattern">
+                              El nombre no tiene formato valido
+                          </p>
+                      </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <input type="text" name="especie" formControlName="especie" placeholder="&#xf2bd;   Especie" class="form-control">
+
+                    <div *ngIf="mascotasForm.get('especie')!.invalid && (mascotasForm.get('especie')!.dirty || mascotasForm.get('especie')!.touched)">
+                        <p class="form-text text-danger" *ngIf="mascotasForm.get('especie')?.errors?.required">
+                            El campo especie es obligatorio
+                        </p>
+                        <p class="form-text text-danger" *ngIf="mascotasForm.get('especie')?.errors?.minlength">
+                          especie invalido, debe contener minimo 3 letras
+                        </p>
+                        <p class="form-text text-danger" *ngIf="mascotasForm.get('especie')?.errors?.maxlength">
+                            Excedió el limite maximo de caracteres
+                        </p>
+                        <p class="form-text text-danger" *ngIf="mascotasForm.get('especie')?.errors?.pattern">
+                            El especie no tiene formato valido
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                  <input type="text" name="raza" formControlName="raza" placeholder="&#xf2bd;   raza" class="form-control">
+
+                  <div *ngIf="mascotasForm.get('raza')!.invalid && (mascotasForm.get('raza')!.dirty || mascotasForm.get('raza')!.touched)">
+                      <p class="form-text text-danger" *ngIf="mascotasForm.get('raza')?.errors?.required">
+                          El campo nombre es obligatorio
+                      </p>
+                      <p class="form-text text-danger" *ngIf="mascotasForm.get('raza')?.errors?.minlength">
+                          Nombre invalido, debe contener minimo 3 letras
+                      </p>
+                      <p class="form-text text-danger" *ngIf="mascotasForm.get('raza')?.errors?.maxlength">
+                          Excedió el limite maximo de caracteres
+                      </p>
+                      <p class="form-text text-danger" *ngIf="mascotasForm.get('raza')?.errors?.pattern">
+                          El nombre no tiene formato valido
+                      </p>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="color" formControlName="color" placeholder="&#xf2bd;   color" class="form-control">
+
+                <div *ngIf="mascotasForm.get('color')!.invalid && (mascotasForm.get('color')!.dirty || mascotasForm.get('color')!.touched)">
+                    <p class="form-text text-danger" *ngIf="mascotasForm.get('color')?.errors?.required">
+                        El campo nombre es obligatorio
+                    </p>
+                    <p class="form-text text-danger" *ngIf="mascotasForm.get('color')?.errors?.minlength">
+                        Nombre invalido, debe contener minimo 3 letras
+                    </p>
+                    <p class="form-text text-danger" *ngIf="mascotasForm.get('color')?.errors?.maxlength">
+                        Excedió el limite maximo de caracteres
+                    </p>
+                    <p class="form-text text-danger" *ngIf="mascotasForm.get('color')?.errors?.pattern">
+                        El nombre no tiene formato valido
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <input type="text" name="sexo" formControlName="sexo" placeholder="&#xf2bd;   sexo" class="form-control">
+
+              <div *ngIf="mascotasForm.get('sexo')!.invalid && (mascotasForm.get('sexo')!.dirty || mascotasForm.get('sexo')!.touched)">
+                  <p class="form-text text-danger" *ngIf="mascotasForm.get('sexo')?.errors?.required">
+                      El campo nombre es obligatorio
+                  </p>
+                  <p class="form-text text-danger" *ngIf="mascotasForm.get('sexo')?.errors?.minlength">
+                      Nombre invalido, debe contener minimo 3 letras
+                  </p>
+                  <p class="form-text text-danger" *ngIf="mascotasForm.get('sexo')?.errors?.maxlength">
+                      Excedió el limite maximo de caracteres
+                  </p>
+                  <p class="form-text text-danger" *ngIf="mascotasForm.get('sexo')?.errors?.pattern">
+                      El nombre no tiene formato valido
+                  </p>
+              </div>
+          </div>
+
+
+
+
+          <div class="form-group">
+            <input type="text" name="nombreDueño" formControlName="nombreDueño" placeholder="&#xf2bd;   Nombre" class="form-control">
+
+            <div *ngIf="mascotasForm.get('nombreDueño')!.invalid && (mascotasForm.get('nombreDueño')!.dirty || mascotasForm.get('nombreDueño')!.touched)">
+                <p class="form-text text-danger" *ngIf="mascotasForm.get('nombreDueño')?.errors?.required">
+                    El campo nombre es obligatorio
+                </p>
+                <p class="form-text text-danger" *ngIf="mascotasForm.get('nombreDueño')?.errors?.minlength">
+                    Nombre invalido, debe contener minimo 3 letras
+                </p>
+                <p class="form-text text-danger" *ngIf="mascotasForm.get('nombreDueño')?.errors?.maxlength">
+                    Excedió el limite maximo de caracteres
+                </p>
+                <p class="form-text text-danger" *ngIf="mascotasForm.get('nombreDueño')?.errors?.pattern">
+                    El nombre no tiene formato valido
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="apellidoDueño" formControlName="apellidoDueño" placeholder="&#xf2bd;   Apellido" class="form-control">
+
+            <div *ngIf="mascotasForm.get('apellidoDueño')!.invalid && (mascotasForm.get('apellidoDueño')!.dirty || mascotasForm.get('apellidoDueño')!.touched)">
+                <p class="form-text text-danger" *ngIf="mascotasForm.get('apellido')?.errors?.required">
+                    El campo apellido es obligatorio
+                </p>
+                <p class="form-text text-danger" *ngIf="mascotasForm.get('apellidoDueño')?.errors?.minlength">
+                    Apellido invalido, debe contener minimo 3 letras
+                </p>
+                <p class="form-text text-danger" *ngIf="mascotasForm.get('apellidoDueño')?.errors?.maxlength">
+                    Excedió el limite maximo de caracteres
+                </p>
+                <p class="form-text text-danger" *ngIf="mascotasForm.get('apellidoDueño')?.errors?.pattern">
+                    El apellido no tiene formato valido
+                </p>
+            </div>
+        </div>
+                      <div class="form-group">
+                          <input type="text" name="dniDueño" formControlName="dniDueño" placeholder="&#xf2bb;   DNI" class="form-control">
+
+                          <div *ngIf="mascotasForm.get('dniDueño')!.invalid && (mascotasForm.get('dniDueño')!.dirty || mascotasForm.get('dniDueño')!.touched)">
+                              <p class="form-text text-danger" *ngIf="mascotasForm.get('dniDueño')?.errors?.required">
+                                  El campo DNI es obligatorio
+                              </p>
+                              <p class="form-text text-danger" *ngIf="mascotasForm.get('dniDueño')?.errors?.minlength">
+                                  DNI invalido, debe contener minimo 7 numeros
+                              </p>
+                              <p class="form-text text-danger" *ngIf="mascotasForm.get('dniDueño')?.errors?.maxlength">
+                                  Excedió el limite maximo de numeros
+                              </p>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <input type="text" name="telefonoDueño" formControlName="telefonoDueño" placeholder="&#xf095;   Telefono " class="form-control">
+
+                          <div *ngIf="mascotasForm.get('telefono')!.invalid && (mascotasForm.get('telefonoDueño')!.dirty || mascotasForm.get('telefonoDueño')!.touched)">
+                              <p class="form-text text-danger" *ngIf="mascotasForm.get('telefonoDueño')?.errors?.required">
+                                  El campo telefono es obligatorio
+                              </p>
+                              <p class="form-text text-danger" *ngIf="mascotasForm.get('telefonoDueño')?.errors?.minlength">
+                                  Telefono invalido, debe contener minimo 8 numeros
+                              </p>
+                              <p class="form-text text-danger" *ngIf="mascotasForm.get('telefonoDueño')?.errors?.maxlength">
+                                  Excedió el limite maximo de numeros
+                              </p>
+                              <p class="form-text text-danger" *ngIf="mascotasForm.get('telefonorDueño')?.errors?.pattern">
+                                  El telefono no tiene formato valido
+                              </p>
+                          </div>
+                      </div>
+
+
+
+                      <div class="form-group">
+                          <input type="text" name="domicilioDueño" formControlName="domicilioDueño" placeholder="   Domicilio" class="form-control">
+
+                          <div *ngIf="mascotasForm.get('domicilio')!.invalid && (mascotasForm.get('domicilioDueño')!.dirty || mascotasForm.get('domicilioDueño')!.touched)">
+                              <p class="form-text text-danger" *ngIf="mascotasForm.get('domicilioDueño')?.errors?.required">
+                                  El campo es obligatorio
+                              </p>
+                              <p class="form-text text-danger" *ngIf="mascotasForm.get('domicilioDueño')?.errors?.minlength">
+                                  Campo inválido, debe contener al menos 3 caracteres
+                              </p>
+                              <p class="form-text text-danger" *ngIf="mascotasForm.get('domicilioDueño')?.errors?.maxlength">
+                                  Limite maximo de caracteres máximo excedido!
+                              </p>
+                              <p class="form-text text-danger" *ngIf="mascotasForm.get('domicilioDueño')?.errors?.pattern">
+                                  El campo no tiene formato valido
+                              </p>
+                          </div>
+                      </div>
+
+
+                      <div class="form-group">
+                          <input type="email" name="emailDueño" formControlName="emailDueño" placeholder="&#xf2b6;   Correo electrónico" class="form-control">
+
+                          <div *ngIf="mascotasForm.get('email')!.invalid && (mascotasForm.get('emailDueño')!.dirty || mascotasForm.get('emailDueño')!.touched)">
+                              <p class="form-text text-danger" *ngIf="mascotasForm.get('emailDueño')?.errors?.required">
+                                  El campo es obligatorio
+                              </p>
+                              <p class="form-text text-danger" *ngIf="mascotasForm.get('emailDueño')?.errors?.email">
+                                  El campo es invalido
+                              </p>
+                          </div>
+                      </div>
+
+
+
+                  </div>
+                  <button pButton type="submit" [disabled]="mascotasForm.invalid" class="btn btn-success btn-block btn-outline">
+                  <i class="fab fa-wpforms"></i>&nbsp;&nbsp;&nbsp;<span>Confirmar solicitud</span>
+                </button>
+              </form>
+
+
+          </div>
+          <div align="center" class="flex"><button class="btn btn-outline-primary" (click)="goBack()" id="a2">Volver</button></div>
+      </div>
+  </div>
+</div>

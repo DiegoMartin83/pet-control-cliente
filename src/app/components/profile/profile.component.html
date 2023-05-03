@@ -1,0 +1,67 @@
+
+
+<div class="container" style="margin-left:15cm; margin-top:10px;">
+    <p-toast></p-toast>
+    <br>
+    <h1 align="center" style="color: white;">Datos Personales</h1>
+
+    <form role="form" (submit)=" modificarData(usuario)">
+        <div>
+            <div class="form-group">
+                <label>Nombre:</label>
+                <input id="input-datos" type="text" name="nombre" [(ngModel)]="usuario.nombre" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Apellido:</label>
+                <input type="text" id="input-datos" name="apellido" [(ngModel)]="usuario.apellido" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>DNI:</label>
+                <input type="text" id="input-datos" name="dni" [(ngModel)]="usuario.dni" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Telefono:</label>
+                <input type="text" id="input-datos" name="telefono" [(ngModel)]="usuario.telefono" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Celular:</label>
+                <input type="text" id="input-datos" name="telefono" [(ngModel)]="usuario.celular" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Domicilio:</label>
+                <input type="text" id="input-datos" name="domicilio" [(ngModel)]="usuario.domicilio" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Correo electrónico:</label>
+                <input type="email" id="input-datos" name="email" [(ngModel)]="usuario.email" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Rol:</label>
+                <input type="email" id="input-datos" name="rol" [(ngModel)]="usuario.rol" class="form-control">
+            </div>
+
+            <!-- <div class="form-group">
+                <label>Perfil:</label>
+                <input type="email" id="input-datos" name="perfil" [(ngModel)]="user.perfil" class="form-control">
+            </div> -->
+
+            <div class="form-group">
+                <label>Contraseña:</label>
+                <input type="password" id="input-datos" name="password" [(ngModel)]="usuario.password" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Confirmar Contraseña:</label>
+                <input type="password" id="input-datos" name="repassword" [(ngModel)]="repassword" placeholder="Confirmar" class="form-control">
+            </div>
+        </div>
+        <button pButton type="submit" class="btn btn-block btn-primary">
+          <i class="fas fa-pen"></i>&nbsp;&nbsp;&nbsp;<span>Modificar</span>
+    </button>
+    </form>
